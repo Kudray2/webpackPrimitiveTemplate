@@ -1,5 +1,6 @@
 import React from "react"
 import xfLogo from '../img/780px-The_X-Files_logo.svg.png'
+import './X.less'
 const X = () => {
   console.log(" X comp render")
   return (
