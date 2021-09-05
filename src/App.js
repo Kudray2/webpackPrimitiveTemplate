@@ -8,7 +8,7 @@ function App() {
   console.log(" Webpack here and React ")
 
   return (
-    <div classname="App">
+    <div className="App">
       <Bcomp />
       <WebpackComp />
       <ReactComp />
