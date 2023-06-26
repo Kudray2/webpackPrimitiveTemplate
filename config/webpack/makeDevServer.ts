@@ -2,6 +2,7 @@
 export function makeDevServer (port: number) {
     return {
         port: port,
-        open: false
+        open: false,
+        historyApiFallback: true
     }
 }

@@ -10,7 +10,7 @@ export function makeWebpackConfig(options: BuildOptions) {
         mode: mode,
         entry: paths.entry,
         module: {
-            rules: makeLoaders()
+            rules: makeLoaders(mode)
         },
         resolve: makeResolvers(),
         output: {

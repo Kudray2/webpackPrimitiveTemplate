@@ -4,14 +4,13 @@ import path from "path";
 
 export default ( env: BuildEnv ) => {
   const paths:BuildPaths = {
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     htmlTemplate: path.resolve(__dirname, 'public', 'index.html'),
     build: path.resolve(__dirname, 'build')
   }
   const mode: BuildMode = env.mode || 'development'
   const port = env.port || 3000
 
-  const config =  makeWebpackConfig({paths, mode, port})
+  return makeWebpackConfig({paths, mode, port})
 
-  return config
 }
