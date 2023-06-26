@@ -42,6 +42,7 @@ node_modules/
 jspm_packages/
 build/
 back/
+.idea/
 
 # TypeScript v1 declaration files
 typings/
