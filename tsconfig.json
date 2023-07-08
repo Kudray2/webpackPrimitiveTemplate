@@ -12,7 +12,9 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "target": "es6",
+      "jsx": "react-jsx"
     }
   }
 }
