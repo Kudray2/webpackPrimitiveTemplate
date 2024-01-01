@@ -24,6 +24,21 @@ export function makeLoaders(mode: BuildOptions['mode']) {
                     "sass-loader",
                 ],
             }
+            const svgLoader = {
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: ['@svgr/webpack'],
+                exclude: /node_modules/,
+            }
+            const fileLoader = {
+                test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+                use: 'file-loader',
+            }
 
-    return [ typescriptLoader, styleLoader ]
+    return [
+        styleLoader,
+        svgLoader,
+        fileLoader,
+        typescriptLoader
+    ]
 }

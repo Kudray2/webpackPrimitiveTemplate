@@ -1,0 +1,1 @@
+export {Compot2} from './Compot2'
