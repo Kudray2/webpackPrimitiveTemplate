@@ -1,6 +1,8 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BuildOptions} from "./types/webpackConfig";
 
+
+
 export function makeLoaders(mode: BuildOptions['mode']) {
     const typescriptLoader =
         {
@@ -9,7 +11,7 @@ export function makeLoaders(mode: BuildOptions['mode']) {
             exclude: /node_modules/,
         }
         const styleLoader = {
-                test: /\.s[ac]ss$/i,
+                test: /\.(s[ac]ss|css)$/i,
                 use: [
                     mode === 'development'? "style-loader" : MiniCssExtractPlugin.loader,
                     {
@@ -21,6 +23,7 @@ export function makeLoaders(mode: BuildOptions['mode']) {
                             }
                         }
                     },
+                    "postcss-loader",
                     "sass-loader",
                 ],
             }
@@ -34,7 +37,7 @@ export function makeLoaders(mode: BuildOptions['mode']) {
                 test: /\.(png|jpe?g|gif|woff2|woff)$/i,
                 use: 'file-loader',
             }
-
+        
     return [
         styleLoader,
         svgLoader,
